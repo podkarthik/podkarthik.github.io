@@ -1,0 +1,163 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I am an instructor at the BS program in Data Science and Applications, IIT Madras. I have a BTech degree in Mechanical Engineering from IIT Madras. I worked as a data scientist for a couple of companies before joining professor Balaraman Ravindran’s lab as a project associate in the computer science department, IIT Madras. I have been associated with the BS program since its inception in the year 2020."
+  },
+  {
+    "objectID": "Linear Algebra for ML/Part-1/Datasets.html",
+    "href": "Linear Algebra for ML/Part-1/Datasets.html",
+    "title": "Datasets",
+    "section": "",
+    "text": "Question\n\n\n\nWhat is a dataset and why is it important?"
+  },
+  {
+    "objectID": "Linear Algebra for ML/Part-1/Datasets.html#datasets",
+    "href": "Linear Algebra for ML/Part-1/Datasets.html#datasets",
+    "title": "Datasets",
+    "section": "Datasets",
+    "text": "Datasets\nThere are different kinds of datasets. The housing dataset that we saw right at the beginning is a tabular dataset. Data comes in the form of a table. Each column of this table is called an attribute or a feature and each row represents one record or observation. Recall that we also use the term data-point to refer to each row of the table. By far, tabular datasets are the most common form in which data is represented. Tabular data can be neatly packed into comma-separated files or CSVs. Few other forms of data:\n\nimage\ntext\nspeech\n\nImage, text and speech data cannot be packed into simple CSVs and are often called unstructured data."
+  },
+  {
+    "objectID": "Linear Algebra for ML/Part-1/Datasets.html#whence-comes-data",
+    "href": "Linear Algebra for ML/Part-1/Datasets.html#whence-comes-data",
+    "title": "Datasets",
+    "section": "Whence comes data?",
+    "text": "Whence comes data?\nHow do we obtain data? Where does data come from? This seems like a simple question but it doesn’t have a simple answer. Here are some scenarios that are arranged in increasing order of complexity:\n\n\n\n\n\n\nScenario-1\n\n\n\nAn FMCG company has given you some historical data concerning its sales over the last three years. It wants you to predict the average sales in the coming quarter.\n\n\nHere we are lucky. Someone comes to our doorstep and gives us the data. It might be the case that the company has neatly arranged the data in a tabular format. In addition, we also have a very precise definition of the problem statement. We have to predict a real number by looking at the data. It is a regression problem.\n\n\n\n\n\n\nScenario-2\n\n\n\nTwitter is developing an algorithm to detect tweets that contain offensive content. As a data scientist, you are given a dump of one million tweets and asked to develop an algorithm to solve the problem.\n\n\nThis is a more challenging problem compared to scenario-1. First, this is an instance of what is called a binary classification problem. Instead of predicting a real number, we have to predict one of two (binary) outcomes for each tweet:\n\noffensive\nnot-offensive\n\nIn order to train a computer to distinguish between the two kinds of tweets, we need to give it examples of tweets of both kinds. Unfortunately, we don’t have that information. If that information is absent, how can we teach the computer to differentiate between the two? So, the first task here is to get the dataset labeled. That is, for each tweet, mark it as “offensive” or “not-offensive”. This process is time consuming and requires considerable manpower, especially if the dataset is large.\n\n\n\n\n\n\nScenario-3\n\n\n\nYou are a research scientist at a manufacturing company. You want to set up a facility that automates the segregation of defective products from non-defective ones. Come up with an end-end ML solution.\n\n\nThis is by far the most challenging scenario. We don’t have access to the data. We need to gather data in the first place. Once we have the data, we need to label it or annotate it. Only then can we start thinking about training ML models on top of the data."
+  },
+  {
+    "objectID": "Linear Algebra for ML/Part-1/Datasets.html#supervision",
+    "href": "Linear Algebra for ML/Part-1/Datasets.html#supervision",
+    "title": "Datasets",
+    "section": "Supervision",
+    "text": "Supervision\nLabeling a dataset is an important part of the data preparation process. However, there may be situations where labeling is not practically feasible. In such cases, we have to settle with unlabeled data. Therefore, datasets in ML can be classified into two categories:\n\nlabeled dataset\nunlabeled dataset\n\nTechniques that work with labeled data fall under the category of supervised learning. Those that work with unlabeled data come under unsupervised learning. What is so special about the term “supervised”?\nCambridge dictionary defines the verb supervise as follows: to watch a person or activity to make certain that everything is done correctly, safely. By a slight extension of this definition, we could say that a supervisor is a teacher who tells us whether we are right or wrong. In this sense, the label performs the role of a supervisor for the machine as it is learning. With unlabeled data, there is no supervision available."
+  },
+  {
+    "objectID": "Linear Algebra for ML/Part-1/Datasets.html#partitioning-the-dataset",
+    "href": "Linear Algebra for ML/Part-1/Datasets.html#partitioning-the-dataset",
+    "title": "Datasets",
+    "section": "Partitioning the dataset",
+    "text": "Partitioning the dataset\nAs humans, how do we know if someone has learnt a skill or not? Tests or exams are the way to go. Exams are so ubiquitous that we often conflate learning with scoring well in exams. However, for a machine, getting a good score in an exam is a good enough proxy for learning. For almost every skill that we can think of, there is some test or exam to evaluate our competency in that skill. Take the analogy that we have been working with: three-digit addition. To know if kids have learnt addition, teachers conduct tests that have problems on three digit addition.\nAn important feature of testing is to make sure that it is challenging. If we ask the same questions that are there in the textbook, kids might score high marks. But chances are that a lot of them would have memorized the answers. Therefore, whenever we have a dataset, we always partition it into two parts:\n\ntrain-dataset\ntest-dataset\n\nWe train the model on the train-dataset and evaluate its performance on the test-dataset. But often, we don’t stop with two partitions, we go for three partitions:\n\ntrain-dataset\nvalidation-dataset\ntest-dataset\n\nThink about the validation-dataset as additional problems for practice or a mock exam that helps the machine learn a good model. The test-dataset is not shown to the model during the learning stage. The learning algorithm has access to only the train-dataset and the validation-dataset. Once the learning process is complete, the model is evaluated on the test-dataset. The test-dataset is sacred in any ML problem. It should be kept hidden and used only at the end. This is analogous to the effort taken by the administration of colleges and universities to seal exam papers and keep them secure until the day of the examination. If the exam paper somehow gets leaked, the exam can no longer be conducted in a fair manner!"
+  },
+  {
+    "objectID": "Linear Algebra for ML/Part-1/Datasets.html#summary",
+    "href": "Linear Algebra for ML/Part-1/Datasets.html#summary",
+    "title": "Datasets",
+    "section": "Summary",
+    "text": "Summary\nDatasets come in different types: tabular data, image, text, speech data and so on. The source of data varies from situation to situation. Sometimes the data could be given to us in a well formatted and usable condition. At other times, we would have to expend effort in gathering data and making it suitable for further processing. Datasets could either be labeled or unlabeled. ML algorithms that deal with labeled data are called supervised learning methods. To evaluate the performance of any ML model, it is important to partition the data into two parts: train, test; the model is trained on the training data and evaluated on the test data."
+  },
+  {
+    "objectID": "Linear Algebra for ML/Part-1/Introduction.html",
+    "href": "Linear Algebra for ML/Part-1/Introduction.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "Question\n\n\n\nWhy should we study linear algebra in a course on data science?"
+  },
+  {
+    "objectID": "Linear Algebra for ML/Part-1/Introduction.html#data",
+    "href": "Linear Algebra for ML/Part-1/Introduction.html#data",
+    "title": "Introduction",
+    "section": "Data",
+    "text": "Data\nThe simplest answer to this question is that we choose vectors and matrices to represent data. Let us take a simple example of data coming from the housing industry. Every house in a locality has the following features or attributes associated with it:\n\nlatitude\nlongitude\nage\nnumber of rooms\narea\ndistance from nearest school\n\nThe selling price of a house depends on these features. For example, a house with more number of rooms may have a higher selling price and a house that is very far from the nearest school may have a lower selling price. A natural question that we might want to ask is this:\n\n\n\n\n\n\nQuestion\n\n\n\nGiven the features of a house can we train a machine to predict its selling price?\n\n\nThis is called a regression problem: given a set of features, map it to a real number. In our example problem, the real number which we wish to predict is the selling price."
+  },
+  {
+    "objectID": "Linear Algebra for ML/Part-1/Introduction.html#vectors",
+    "href": "Linear Algebra for ML/Part-1/Introduction.html#vectors",
+    "title": "Introduction",
+    "section": "Vectors",
+    "text": "Vectors\nLet us take a concrete example of a single house. Since each house represents one instance of the data we are working with, we will call it a data-point:\n\nA Data-Point\n\n\nName\nValues\n\n\n\n\nlatitude\n12.9\n\n\nlongitude\n80.2\n\n\nage\n3\n\n\nnumber of rooms\n2\n\n\narea\n1000\n\n\ndistance from nearest school\n3\n\n\n\nLatitude and longitude are in degrees, age is in years, area is in square feet, distance is in kilometers, selling price is in lakhs of rupees. But none of these “units” really matter for an ML algorithm: it is going to abstract out the details and look at this as a column of numbers, which is nothing but a vector:\n\\[\n\\begin{equation*}\n\\begin{bmatrix}\n12.9\\\\\n80.2\\\\\n3\\\\\n2\\\\\n1000\\\\\n3\n\\end{bmatrix}\n\\end{equation*}\n\\]\nThe selling price is not included as an element in the vector as that is usually unknown to us. This unknown quantity which we have to estimate or predict is called the target.\n\n\n\n\n\n\nRemarks\n\n\n\n\nVectors are usually represented as column vectors or \\(d \\times 1\\) matrices.\nAn alternative terminology for features/target is independent/dependent variables. The term independent variables stands for the features and dependent variable for the label. You can think about the dependent variable as a function of the independent variables."
+  },
+  {
+    "objectID": "Linear Algebra for ML/Part-1/Introduction.html#matrices",
+    "href": "Linear Algebra for ML/Part-1/Introduction.html#matrices",
+    "title": "Introduction",
+    "section": "Matrices",
+    "text": "Matrices\nWe cannot learn anything substantial from looking at the data of one house. We have to look at the data of multiple houses. That will give us an idea of the general picture. Rather than look at each vector in isolation, we can arrange them in a tabular form. For now, we only focus on the features:\n\n\n\n\n\n\n\n\n\n\n\n\n\nhouse number\nlatitude\nlongitude\nage\nrooms\narea\ndistance\nselling price\n\n\n\n\n1\n12.9\n80.2\n3\n2\n1000\n3\n40\n\n\n\\(\\cdots\\)\n\n\n\n\n\n\n\n\n\n50\n14.3\n75.9\n30\n2\n1200\n5\n20\n\n\n\\(\\cdots\\)\n\n\n\n\n\n\n\n\n\n100\n20.8\n90.5\n1\n3\n1500\n2\n35\n\n\n\nThis data for \\(100\\) houses is nothing but a \\(100\\times 6\\) matrix:\n\\[\n\\begin{equation*}\n\\begin{bmatrix}\n12.9 & 80.2 & 3 & 2 & 1000 & 3\\\\\n\\vdots  & \\vdots  & \\vdots  & \\vdots  & \\vdots  & \\vdots \\\\\n14.3 & 75.9 & 30 & 2 & 1200 & 5\\\\\n\\vdots  & \\vdots  & \\vdots  & \\vdots  & \\vdots  & \\vdots \\\\\n20.8 & 90.5 & 1 & 3 & 1500 & 2\n\\end{bmatrix}\n\\end{equation*}\n\\]\nEach row of this matrix corresponds to one data-point. In general, if a dataset has \\(d\\) features and \\(n\\) data-points, it is represented as a \\(n \\times d\\) or a \\(d \\times n\\) data-matrix or design matrix.\n\n\n\n\n\n\nNote\n\n\n\nIf you find yourself lost when working with matrices, remember that a matrix is a way to represent a collection of data-points (dataset)."
+  },
+  {
+    "objectID": "Linear Algebra for ML/Part-1/Introduction.html#summary",
+    "href": "Linear Algebra for ML/Part-1/Introduction.html#summary",
+    "title": "Introduction",
+    "section": "Summary",
+    "text": "Summary\nData is represented as vectors and matrices. If we wish to extract insights from data, we need to know how to manipulate vectors and matrices. Therefore, we need to have a reasonable understanding of linear algebra — the study of vectors and matrices — if we wish to understand how ML algorithms work."
+  },
+  {
+    "objectID": "Linear Algebra for ML/Slides/demo.html#characteristic-polynomial",
+    "href": "Linear Algebra for ML/Slides/demo.html#characteristic-polynomial",
+    "title": "Characteristic Polynomial",
+    "section": "Characteristic Polynomial",
+    "text": "Characteristic Polynomial\n\nConsider a matrix \\(A\\) with an eigenpair \\((\\lambda, v)\\):\n\n\n\\[\n\\begin{aligned}\n&Av = \\lambda v\\\\\n\\end{aligned}\n\\]\n\n\n\\[\n\\begin{aligned}\n&Av = \\lambda v\\\\\\\\\n&Av = (\\lambda I) v\\\\\\\\\n\\end{aligned}\n\\]\n\n\n\\[\n\\begin{aligned}\n&Av = \\lambda v\\\\\\\\\n&Av = (\\lambda I) v\\\\\\\\\n&(A - \\lambda I) v = 0\n\\end{aligned}\n\\]\n\n\n\\[\n\\begin{aligned}\n&Av = \\lambda v\\\\\\\\\n&Av = (\\lambda I) v\\\\\\\\\n&(A - \\lambda I) v = 0\\\\\\\\\n&|A - \\lambda I| = 0\n\\end{aligned}\n\\]\n\n\n\\[\nA = \\begin{bmatrix}\n1 & 0\\\\\n3 & 2\n\\end{bmatrix}\n\\]\n\n\n\\[\n\\begin{aligned}\n& |A - \\lambda I| = \\begin{vmatrix}\n1 - \\lambda & 0\\\\\n3 & 2 - \\lambda\n\\end{vmatrix}\\\\\\\\\n\\end{aligned}\n\\]\n\n\n\\[\n\\begin{aligned}\n& |A - \\lambda I| = \\begin{vmatrix}\n1 - \\lambda & 0\\\\\n3 & 2 - \\lambda\n\\end{vmatrix}\\\\\\\\\n&=(1 - \\lambda)(2 - \\lambda)\n\\end{aligned}\n\\]\n\n\n\\[\n\\boxed{\\lambda = 1, 2}\n\\]"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Karthik Thiagarajan",
+    "section": "",
+    "text": "A collection of notes related to mathematics and machine learning."
+  },
+  {
+    "objectID": "Linear Algebra for ML/index.html",
+    "href": "Linear Algebra for ML/index.html",
+    "title": "Linear Algebra for ML",
+    "section": "",
+    "text": "A collection of notes on linear algebra."
+  },
+  {
+    "objectID": "Linear Algebra for ML/Part-1/ML Problem.html",
+    "href": "Linear Algebra for ML/Part-1/ML Problem.html",
+    "title": "ML Problem",
+    "section": "",
+    "text": "Question\n\n\n\nWhat does a typical ML problem look like?"
+  },
+  {
+    "objectID": "Linear Algebra for ML/Part-1/ML Problem.html#analogy",
+    "href": "Linear Algebra for ML/Part-1/ML Problem.html#analogy",
+    "title": "ML Problem",
+    "section": "Analogy",
+    "text": "Analogy\nThink about arithmetic classes in primary school. During the class hours, a student looks at solved examples in a textbook and how to solve simple three digit addition problems. Let us say that her textbook has the following problems along with the answers:\n\n\\(103+205=308\\)\n\\(123+409=532\\)\n\\(185+483=668\\)\n\nDuring the instructional hours, the student has access to both the questions and the answers. In the exam, she will not have access to the answers. But more importantly, she will not even be asked the same questions! So, just memorizing the answers will not help. She would have to learn how addition works. She needs to have a mental model of addition. In other words, she would have to learn a function from the input (question) to the output (answer).\nThis is exactly what happens in a regression problem. The inputs are a set of data-points. The outputs corresponding to these inputs are real numbers called targets or labels. A regression model has to learn the mapping from input to output. Once this mapping or function is learnt, the model can then be used to predict the output on unseen inputs. The collection of data-points along with their targets is called a labeled dataset. A regression model makes use of this dataset to learn a function. A labeled dataset is nothing but the textbook problems in our analogy."
+  },
+  {
+    "objectID": "Linear Algebra for ML/Part-1/ML Problem.html#data-representation",
+    "href": "Linear Algebra for ML/Part-1/ML Problem.html#data-representation",
+    "title": "ML Problem",
+    "section": "Data Representation",
+    "text": "Data Representation\nWe are given a collection of \\(n\\) data-points and \\(n\\) labels. Each data-point is described by \\(d\\) features. For example, in the housing dataset, each house is a data-point and is described by features such as latitude, longitude, area and so on. These features are clubbed together in a feature-vector of size \\(d\\). Arranging the \\(n\\) data-points in a matrix, we get a \\(n\\times d\\) data-matrix. Let us call this matrix \\(\\mathbf{X}\\):\n\\[\n\\begin{equation*}\n\\mathbf{X} =\\begin{bmatrix}\nx_{11} & -  & x_{1d}\\\\\n|  & x_{ij} & | \\\\\nx_{n1} & -  & x_{nd}\n\\end{bmatrix}\n\\end{equation*}\n\\]\nEach row of this matrix is the feature vector for one data-point. The element \\(x_{ij}\\) is the \\(j^{th}\\) feature of the \\(i^{th}\\) data-point. The labels can be put together in a vector of size \\(n\\). Let us call this \\(\\mathbf{y}\\):\n\\[\n\\begin{equation*}\n\\mathbf{y} =\\begin{bmatrix}\ny_{1}\\\\\n\\vdots \\\\\ny_{n}\n\\end{bmatrix}\n\\end{equation*}\n\\]\n\n\n\n\n\n\nRemark\n\n\n\nWe will use the following conventions to represent scalars, vectors and matrices:\n\nScalars are represented by small letters in normal font: \\(\\displaystyle x,y,z\\).\nVectors are represented by small letters in bold-faced font: \\(\\displaystyle \\mathbf{x} ,\\ \\mathbf{y} ,\\ \\mathbf{z}\\).\nMatrices are represented by capital letters in bold-faced font: \\(\\displaystyle \\mathbf{X} ,\\mathbf{Y} ,\\mathbf{Z}\\)"
+  },
+  {
+    "objectID": "Linear Algebra for ML/Part-1/ML Problem.html#model",
+    "href": "Linear Algebra for ML/Part-1/ML Problem.html#model",
+    "title": "ML Problem",
+    "section": "Model",
+    "text": "Model\nAs stated earlier, a regression model can be viewed as a function that transforms a data-point into a label. Formally:\n\\[\n\\begin{equation*}\nf:\\mathbb{R}^{d}\\rightarrow \\mathbb{R}\n\\end{equation*}\n\\]\nEach feature-vector is of size \\(d\\). So, the feature-vectors reside in the \\(d\\) dimensional space \\(\\mathbb{R}^{d}\\). The labels are real numbers, so they reside in \\(\\mathbb{R}\\). Mathematically, this is the action of a model on a data-point \\(\\mathbf{x}\\):\n\\[\n\\begin{equation*}\ny=f(\\mathbf{x} )\n\\end{equation*}\n\\]\nPictorially:\nWhat is so special about a ML model? All models take some input and produce a corresponding output. The key difference is that in a classical programming setting, we are given the input and the function and are asked to find the output. In machine learning we are given both the input and the output, we have to learn a model \\(f\\). The function or the model is the unknown. This is what has to be learnt."
+  },
+  {
+    "objectID": "Linear Algebra for ML/Part-1/ML Problem.html#learning",
+    "href": "Linear Algebra for ML/Part-1/ML Problem.html#learning",
+    "title": "ML Problem",
+    "section": "Learning",
+    "text": "Learning\nML is all about learning from data. But who or what is learning? More importantly, who or what enables the learning? There is a learning algorithm which drives the learning. We can think of the model as the outcome of the learning process. During the learning stage, the dataset is fed as input to a learning algorithm, which in turn outputs a model.\n\n\n\n\nflowchart LR\n  A[Labeled Dataset] --&gt; B[Learning Algorithm]\n  B[Learning Algorithm] --&gt; C[Model]\n\n\n\n\n\nThere is one important detail that is missing in this diagram. There are several models that we could choose from. Going back to our analogy, there are different ways to understand three digit addition:\n\nrepresenting numbers as counts of physical objects\nrepresenting numbers as abstract entities that can be manipulated\n\nTeachers might choose the first model to help kids understand addition. We all would have come across this example at some point: “If I have two chocolates in my left hand and five in my right hand, how many do I have in total?” As kids grow up, teachers might move to the second model, which is more sophisticated. Something similar happens in ML. We are the teachers for the machines. Our responsibility is to choose a family of models and present it to the machine.\n\n\n\n\nflowchart LR\n  A[Labeled Dataset] --&gt; B[Learning Algorithm]\n  D[Model Family] --&gt; B[Learning Algorithm]\n  B[Learning Algorithm] --&gt; C[Model]\n\n\n\n\n\nThus there are two inputs to the learning algorithm:\n\nlabeled dataset\nfamily of models\n\nThe task of the algorithm is to explore the space of models and pick the one that best fits the labeled dataset. ML scientists have come up with a variety of models. The simplest such model is a linear model. We shall take this up in subsequent chapters.\n\n\n\n\n\n\nRemark\n\n\n\nFor some regression models, once you have learnt the model, you can throw away the dataset (textbook). This is not true of all regression models though! Think about how you learnt three-digit addition. Do you still carry your primary school textbooks around? No! Your mind has a representation of what addition is. This representation is what we call a model.}"
+  },
+  {
+    "objectID": "Linear Algebra for ML/Part-1/ML Problem.html#summary",
+    "href": "Linear Algebra for ML/Part-1/ML Problem.html#summary",
+    "title": "ML Problem",
+    "section": "Summary",
+    "text": "Summary\nRegression is a classic ML problem that uses labeled data to learn a mapping from a feature-vector to a real number. The data-points are arranged in a data-matrix called \\(\\mathbf{X}\\). The labels are arranged in a label vector called \\(\\mathbf{y}\\). A model is a function that transforms a feature-vector to a label."
+  },
+  {
+    "objectID": "RL/Revision-1.html#mdp",
+    "href": "RL/Revision-1.html#mdp",
+    "title": "RL | Quiz-1 | Revision",
+    "section": "MDP",
+    "text": "MDP\n\nMarkov Decision Process\n\n\nStates: \\(\\mathcal{S}\\)\nActions: \\(\\mathcal{A}\\)\nRewards: \\(\\mathcal{R}\\)\nTransition Probabilities and Reward Expectations\n\n\\(p(s^{\\prime}, r\\ |\\ s, a)\\)\n\\(p(s^{\\prime}\\ |\\ s, a), r(s, a, s^{\\prime})\\)\n\nMDP \\(\\rightarrow\\) \\(\\langle \\mathcal{S}, \\mathcal{A}, \\mathcal{R}, \\mathcal{p} \\rangle\\)\nFinite MDP\n\nfinite states\nfinite actions\n\n\n\n\\[\np(s^{\\prime}\\ |\\ s, a) = \\sum \\limits_{r} p(s^{\\prime}, r\\ |\\ s, a)\n\\]\n\n\n\\[\np(r\\ |\\ s^{\\prime}, s, a) = \\cfrac{p(s^{\\prime}, r\\ |\\ s, a)}{p(s^{\\prime}\\ |\\ s, a)}\n\\]\n\n\n\\[\nr(s, a, s^{\\prime}) = \\sum \\limits_{r} r \\cdot p(r\\ |\\ s^{\\prime}, s, a)\n\\]"
+  },
+  {
+    "objectID": "RL/Revision-1.html#return",
+    "href": "RL/Revision-1.html#return",
+    "title": "RL | Quiz-1 | Revision",
+    "section": "Return",
+    "text": "Return\n\n\\[\nG_t = R_{t + 1} + \\gamma \\cdot R_{t + 2} + \\gamma^2 \\cdot R_{t + 3} + \\cdots\n\\]\n\n\n\n\\(\\gamma\\): discount rate\n\\(0 \\leq \\gamma \\leq 1\\)\n\\(\\gamma = 0\\): myopic\n\\(\\gamma \\rightarrow 1\\): farsighted\n\n\n\nTasks\n\nEpisodic\n\nTypically \\(\\gamma = 1\\)\n\nContinuing\n\n\\(0 \\leq \\gamma &lt; 1\\)\n\n\n\n\n\\[\nG_{t} = R_{t + 1} + \\gamma \\cdot [R_{t + 2} + \\gamma \\cdot R_{t + 3} + \\cdots]\n\\]\n\n\n\\[\nG_{t} = R_{t + 1} + \\gamma \\cdot G_{t + 1}\n\\]"
+  }
+]
