@@ -1,0 +1,6 @@
+---
+title: "About"
+order: 2
+---
+
+I am an instructor at the BS program in Data Science and Applications, IIT Madras. I have a BTech degree in Mechanical Engineering from IIT Madras. I worked as a data scientist for a couple of companies before joining professor Balaraman Ravindran's lab as a project associate in the computer science department, IIT Madras. I have been associated with the BS program since its inception in the year 2020.

@@ -1,0 +1,30 @@
+project:
+  type: website
+
+website:
+  title: "Karthik Thiagarajan"
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Home"
+        file: index.qmd
+      - about.qmd
+  sidebar:
+    style: "floating"
+    search: true
+    border: true
+    collapse-level: 1
+    contents: auto
+
+format:
+  html:
+    theme: cosmo
+    fontsize: large
+    css: styles.css
+    toc: true
+    grid:
+      sidebar-width: 250px
+
+execute:
+  freeze: auto
